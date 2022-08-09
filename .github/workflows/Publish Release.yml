@@ -35,11 +35,11 @@ jobs:
       - name: Install prod
         run: npm i --omit=dev
       - name: Pack
-        run: zip -r Flow.Launcher.Plugin.SearchNPM.zip . -x '*.git*'
+        run: zip -r Flow.Launcher.Plugin.SearchMDN.zip . -x '*.git*'
       - name: Publish
         uses: softprops/action-gh-release@v1
         with:
-          files: 'Flow.Launcher.Plugin.SearchNPM.zip'
+          files: 'Flow.Launcher.Plugin.SearchMDN.zip'
           tag_name: 'v${{steps.version.outputs.prop}}'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
