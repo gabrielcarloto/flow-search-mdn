@@ -2,7 +2,7 @@
 
 <p align="center">Search MDN Web Docs and open the pages in your browser — just type <code>mdn</code> and your search query!</p>
 
-<p align="center"><img src="https://ik.imagekit.io/698xlahbaqz/search_mdn_zIn0PbDNz?ik-sdk-version=javascript-1.4.3&updatedAt=1660070048988" /><p>
+<p align="center"><img src="https://user-images.githubusercontent.com/68694907/183737183-260eb756-cae0-4587-8b01-9d45f4c2567e.gif" /><p>
 
 <p align="center">Built with <a href="https://github.com/gabrielcarloto/flow-launcher-helper">flow-launcher-helper</a></p>
 
