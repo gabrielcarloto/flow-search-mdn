@@ -1,0 +1,27 @@
+body:
+  - type: dropdown
+    attributes:
+      name: sort
+      label: 'Sort:'
+      defaultValue: 'best'
+      options:
+        - 'best'
+        - 'relevance'
+        - 'popularity'
+  - type: dropdown
+    attributes:
+      name: locale
+      label: 'Locale:'
+      defaultValue: 'en-us'
+      options:
+        - 'en-us'
+        - 'de'
+        - 'es'
+        - 'fr'
+        - 'ja'
+        - 'ko'
+        - 'pl'
+        - 'pt-br'
+        - 'ru'
+        - 'zn-cn'
+        - 'zh-tw'
