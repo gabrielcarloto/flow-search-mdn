@@ -45,7 +45,7 @@ on('query', async () => {
     const results: JSONRPCResponse<Methods>[] = [];
 
     data.documents.forEach(({ mdn_url, summary, title }) => {
-      const subtitle = summary.replace(/(\n\s)/gm, '');
+      const subtitle = summary.replace(/(\n\s?)/gm, '').substring(0, 120);
 
       results.push({
         title: title,
