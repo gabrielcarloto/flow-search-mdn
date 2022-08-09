@@ -3,26 +3,26 @@ import axios from 'axios';
 import { Flow, JSONRPCResponse } from 'flow-launcher-helper';
 import { api } from './api.js';
 
-interface GetPackagesResponse {
+interface GetMDNPagesResponse {
   data: {
-    results: [
-      {
-        package: {
-          name: string;
-          version: string;
-          description: string;
-          links: {
-            npm: string;
-          };
-        };
-      },
-    ];
+    documents: {
+      mdn_url: string;
+      title: string;
+      summary: string;
+    }[];
   };
 }
 
 type Methods = 'open_result';
 
-const { params, showResult, on, run } = new Flow<Methods>('app.png');
+interface Settings {
+  sort: string;
+  locale: string;
+}
+
+const { params, showResult, on, run, settings } = new Flow<Methods, Settings>(
+  'app.png',
+);
 
 on('query', async () => {
   if (params.length <= 1) {
@@ -32,20 +32,26 @@ on('query', async () => {
   }
 
   try {
-    const { data }: GetPackagesResponse = await api.get('/search', {
+    const { locale, sort } = settings;
+
+    const { data }: GetMDNPagesResponse = await api.get('/search', {
       params: {
         q: params,
+        locale,
+        sort,
       },
     });
 
     const results: JSONRPCResponse<Methods>[] = [];
 
-    data.results.forEach(({ package: result }) => {
+    data.documents.forEach(({ mdn_url, summary, title }) => {
+      const subtitle = summary.replace(/(\n\s)/gm, '');
+
       results.push({
-        title: `${result.name} | v${result.version}`,
-        subtitle: result.description,
+        title: title,
+        subtitle,
         method: 'open_result',
-        params: [result.links.npm],
+        params: [mdn_url],
         iconPath: 'app.png',
       });
     });
@@ -62,7 +68,7 @@ on('query', async () => {
 });
 
 on('open_result', () => {
-  const url = params;
+  const url = `https://developer.mozilla.org${params}`;
   open(url);
 });
 
