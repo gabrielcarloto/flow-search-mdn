@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://developer.mozilla.org/api/v1/search',
+  baseURL: 'https://developer.mozilla.org/api/v1',
 });
