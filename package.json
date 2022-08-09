@@ -1,5 +1,5 @@
 {
-  "name": "flow-search-npm",
+  "name": "flow-search-mdn",
   "type": "module",
   "scripts": {
     "dev": "tsnd src/index.ts",
