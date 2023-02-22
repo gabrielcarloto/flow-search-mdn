@@ -4,9 +4,9 @@
   "Name": "Search MDN",
   "Description": "Search MDN Web Docs",
   "Author": "Gabriel Carloto",
-  "Version": "1.0.0",
-  "Language": "executable",
+  "Version": "1.0.1",
+  "Language": "typescript",
   "Website": "https://github.com/gabrielcarloto/flow-search-mdn",
-  "ExecuteFileName": "run.bat",
+  "ExecuteFileName": "./build/index.js",
   "IcoPath": "app.png"
 }
