@@ -4,7 +4,7 @@
   "Name": "Search MDN",
   "Description": "Search MDN Web Docs",
   "Author": "Gabriel Carloto",
-  "Version": "1.0.1",
+  "Version": "1.0.2",
   "Language": "typescript",
   "Website": "https://github.com/gabrielcarloto/flow-search-mdn",
   "ExecuteFileName": "./build/index.js",
