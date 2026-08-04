@@ -1,5 +1,9 @@
 <h1 align="center">Flow Search MDN</h1>
 
+
+> [!WARNING]
+> Project archived. Reason: I'm a Linux user now. Feel free to fork.
+
 <p align="center">Search MDN Web Docs and open the pages in your browser — just type <code>mdn</code> and your search query!</p>
 
 <p align="center"><img src="https://user-images.githubusercontent.com/68694907/183737183-260eb756-cae0-4587-8b01-9d45f4c2567e.gif" /><p>
